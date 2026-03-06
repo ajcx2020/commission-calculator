@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  background: #f7f7f5;
+  font-family: Arial, sans-serif;
+  color: #1c2a39;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.logo {
+  height: 52px;
+  margin-right: 12px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: bold;
+  color: #1593d0; /* Indy Roof accent */
+}
+
+.container {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #364357;
+}
+
+.card input,
+.card select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #fafafa;
+}
+
+.card.result h3 {
+  margin: 0;
+  color: #1593d0;
+}
+
+.card.result p {
+  font-size: 1.4rem;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.warning {
+  background: #ffe0e0;
+  color: #b40000;
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #ffbaba;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.next-tier {
+  background: #e7f8ff;
+  color: #036b96;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #c5ecff;
+  text-align: center;
+  font-weight: 600;
+}

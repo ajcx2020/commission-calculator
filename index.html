@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indy Roof Commission Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="app-header">
+    <img src="logo.png" class="logo" alt="Indy Roof Logo">
+    <h1>Commission Calculator</h1>
+  </header>
+
+  <main class="container">
+
+    <!-- Base Job Cost -->
+    <div class="card">
+      <label>Base Job Cost</label>
+      <input id="baseCost" type="number" placeholder="Enter base job cost">
+    </div>
+
+    <!-- Lead Source -->
+    <div class="card">
+      <label>Lead Source</label>
+      <select id="leadSource">
+        <option value="">Select source</option>
+        <option value="company">Company Lead</option>
+        <option value="self">Self Generated</option>
+      </select>
+    </div>
+
+    <!-- Company Truck -->
+    <div class="card">
+      <label>Company Truck</label>
+      <select id="companyTruck">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+    </div>
+
+    <!-- Volume Accelerator -->
+    <div class="card">
+      <label>Volume Accelerator</label>
+      <select id="accelerator">
+        <option value="0">None</option>
+        <option value="0.005">+0.5%</option>
+        <option value="0.01">+1.0%</option>
+        <option value="0.015">+1.5%</option>
+      </select>
+    </div>
+
+    <!-- Margin Slider -->
+    <div class="card">
+      <label>Target Margin: <span id="marginLabel">22%</span></label>
+      <input id="marginSlider" type="range" min="22" max="65" step="1" value="22">
+    </div>
+
+    <!-- Warning -->
+    <div id="warningBox" class="warning hidden">
+      ⚠ Below desired company profit margin
+    </div>
+
+    <!-- Results -->
+    <div class="card result">
+      <h3>Adjusted Cost</h3>
+      <p id="adjustedCost">$0</p>
+    </div>
+
+    <div class="card result">
+      <h3>Sale Price</h3>
+      <p id="salePrice">$0</p>
+    </div>
+
+    <div class="card result">
+      <h3>Profit Dollars</h3>
+      <p id="profitDollars">$0</p>
+    </div>
+
+    <div class="card result">
+      <h3>Commission %</h3>
+      <p id="commissionPercent">0%</p>
+    </div>
+
+    <div class="card result">
+      <h3>Commission Dollars</h3>
+      <p id="commissionDollars">$0</p>
+    </div>
+
+    <!-- Next Tier -->
+    <div id="nextTierBox" class="next-tier"></div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
