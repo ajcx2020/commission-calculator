@@ -5,7 +5,7 @@ body {
   color: #1c2a39;
 }
 
-/* Fade‑in on load */
+/* Fade-in */
 * {
   animation: fadeIn 0.4s ease-out;
 }
@@ -41,7 +41,7 @@ h1 {
   padding: 0 20px;
 }
 
-/* Card entrance animation */
+/* Card */
 .card {
   background: white;
   padding: 18px;
@@ -77,7 +77,6 @@ h1 {
   transition: background 0.3s, transform 0.2s;
 }
 
-/* Pop effect when numbers update */
 .result-pop {
   background: #e2f6ff !important;
   transform: scale(1.02);
@@ -95,7 +94,6 @@ h1 {
 
 .hidden { display: none; }
 
-/* Next tier highlight */
 .next-tier {
   background: #e7f8ff;
   color: #036b96;
@@ -111,7 +109,6 @@ h1 {
   box-shadow: 0 0 12px rgba(21,147,208,0.5);
 }
 
-/* Margin slider glow */
 #marginSlider:active {
   box-shadow: 0 0 8px #1593d0;
 }
