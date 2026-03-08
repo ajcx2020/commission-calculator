@@ -24,37 +24,6 @@ acceleratorEl.addEventListener("change", () =>
   localStorage.setItem("accel", acceleratorEl.value)
 );
 
-// Confetti blast for 60%
-function blastConfetti() {
-  const duration = 1 * 1000;
-  const end = Date.now() + duration;
-
-  (function frame() {
-    confetti({
-      particleCount: 6,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 }
-    });
-
-    confetti({
-      particleCount: 6,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1 }
-    });
-
-    if (Date.now() < end) requestAnimationFrame(frame);
-  })();
-}
-
-// Quick cha‑ching sound (optional)
-function playChaChing() {
-  const audio = new Audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg");
-  audio.volume = 0.15;
-  audio.play();
-}
-
 function animateNumber(element, target) {
   const start = parseFloat(element.innerText.replace(/[^0-9.-]+/g,"")) || 0;
   const duration = 500;
@@ -111,7 +80,7 @@ function nextTier(m) {
   return null;
 }
 
-let lastMarginBand = null; // to detect changes
+let lastMarginBand = null;
 
 function calculate() {
   const base = parseFloat(baseCostEl.value) || 0;
@@ -127,6 +96,7 @@ function calculate() {
   const marketing = lead === "company" ? 250 : 0;
   const adjusted = base + marketing;
   const sale = adjusted / (1 - margin);
+
   const profit = sale - adjusted;
   const profitMargin = profit / sale;
 
@@ -144,11 +114,9 @@ function calculate() {
   flashCard(salePriceEl.parentElement);
   flashCard(commissionDollarsEl.parentElement);
 
-  // Warnings
   if (margin * 100 < 40) warningBox.classList.remove("hidden");
   else warningBox.classList.add("hidden");
 
-  // Next tier
   const tier = nextTier(margin);
 
   if (!tier) {
@@ -158,10 +126,8 @@ function calculate() {
       </div>
     `;
 
-    // Trigger 60% celebration ONLY when crossing threshold
     if (lastMarginBand !== "60") {
-      blastConfetti();
-      playChaChing();
+      confetti();
       nextTierBox.classList.add("next-tier-glow");
     }
 
@@ -181,22 +147,8 @@ function calculate() {
   lastMarginBand = band;
 }
 
-// Shake animation for "Top Tier"
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
-}
-`;
-document.head.appendChild(style);
-
 document.querySelectorAll("input, select").forEach(el =>
   el.addEventListener("input", calculate)
 );
 
 marginSliderEl.addEventListener("input", calculate);
-
