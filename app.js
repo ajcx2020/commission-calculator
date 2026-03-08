@@ -9,7 +9,6 @@ const warningBox = document.getElementById("warningBox");
 
 const adjustedCostEl = document.getElementById("adjustedCost");
 const salePriceEl = document.getElementById("salePrice");
-const profitDollarsEl = document.getElementById("profitDollars");
 const commissionPercentEl = document.getElementById("commissionPercent");
 const commissionDollarsEl = document.getElementById("commissionDollars");
 const nextTierBox = document.getElementById("nextTierBox");
@@ -138,13 +137,11 @@ function calculate() {
 
   animateNumber(adjustedCostEl, adjusted);
   animateNumber(salePriceEl, sale);
-  animateNumber(profitDollarsEl, profit);
   commissionPercentEl.textContent = (finalPct * 100).toFixed(2) + "%";
   animateNumber(commissionDollarsEl, comm);
 
   flashCard(adjustedCostEl.parentElement);
   flashCard(salePriceEl.parentElement);
-  flashCard(profitDollarsEl.parentElement);
   flashCard(commissionDollarsEl.parentElement);
 
   // Warnings
@@ -202,3 +199,4 @@ document.querySelectorAll("input, select").forEach(el =>
 );
 
 marginSliderEl.addEventListener("input", calculate);
+
